@@ -1,3 +1,4 @@
+<p align="center">
 <img align="center" src="https://i.pinimg.com/originals/ce/87/be/ce87bec6960894a07cff91a3a4a7615e.png" width="154">
 <h1 align="center">Road Trip Planner</h1>
 <p align="center">
@@ -9,9 +10,9 @@ The was developed using ReactJs.
 
 ## Preview
 The components are collapsable what makes the use less confuse and appropriate to small screens. The first screen shows a route for three brazilian cities.
-<img align="center" src="./examples/example1.png" width="100%">
+[](examples/example1.png)
 The second screen displays the details for the user's trip.
-<img align="center" src="./examples/example1.png" width="100%">
+[](examples/example1.png)
 
 ## Available Scripts
 
