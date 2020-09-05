@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect} from 'react'
 import TripContext from '../../contexts/trip'
 import {MdDeleteForever} from "react-icons/md"
 import { toast } from 'react-toastify'
@@ -8,11 +8,25 @@ import './index.css'
 export default function Form(){
     const [inputList, setInputList] = useState([{ destination: "", stay_time: "" }]);
     const [origin, setOrigin] = useState('');
-    const {traceRoute} = useContext(TripContext);
+    const {traceRoute, places} = useContext(TripContext);
 
     const addInput = () =>{
         setInputList([...inputList, {destination: '', stay_time: ''}])
     }
+
+    useEffect(() => {
+        if(places.length > 0){
+            var list = []
+            setOrigin(places[0])
+            places.map((place,i) => {
+                if(i > 0){
+                    list.push({destination: place, stay_time: ""})
+                }
+            })
+            console.log(list)
+            setInputList(list)
+        }
+    }, [])
 
     const handleInputChange = (e, index) => {
         const { name, value } = e.target;
@@ -58,7 +72,7 @@ export default function Form(){
                             onChange={e => handleInputChange(e, i)}/>
 
                             <input 
-                            placeholder="Tempo de Permanência" 
+                            placeholder="Tempo de Permanência (min)" 
                             name="stay_time" 
                             style={{gridArea: 'b'}}
                             value={x.stay_time}

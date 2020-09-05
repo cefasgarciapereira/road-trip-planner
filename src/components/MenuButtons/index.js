@@ -3,7 +3,6 @@ import { MdExplore, MdAdd} from "react-icons/md"
 import './styles.css'
 
 export default function MenuButtons(props){
-    console.log(props)
     return(
         <div className={'button_container'}>
             <MdAdd 

@@ -7,21 +7,13 @@ const TripContext = createContext();
 
 export const TripProvider = ({children}) => {
     const [places, setPlaces] = useState([])
+    const [coordinates, setCoordinates] = useState([])
     const [mapComponent, setMapComponent] = useState(<GoogleMap defaultZoom={7} places={[]} key={new Date().getTime()}/>)
-
-    const updateMapComponent = () =>{
-        /*const test = [
-            {latitude: 25.8103146,longitude: -80.1751609},
-            {latitude: 27.9947147,longitude: -82.5943645},
-            {latitude: 28.4813018,longitude: -81.4387899}
-          ]*/
-        setMapComponent(<GoogleMap defaultZoom={7} places={places} key={new Date().getTime()}/>)
-    }
 
     useEffect(() => {
         if(places.length > 0)
             updateMapComponent();
-    }, [places])
+    }, [coordinates])
 
     const traceRoute = async (origin, destinations) =>{
         const places = validateTrip(origin, destinations);
@@ -31,12 +23,12 @@ export const TripProvider = ({children}) => {
     }
 
     const validateTrip = (origin, destinations) =>{
-        var places = []
+        var placesTemp = []
         if(origin){
-            places.push(origin)
+            placesTemp.push(origin)
             destinations.map(dest => {
                 if(dest){
-                    places.push(dest)
+                    placesTemp.push(dest)
                 }else{
                     toast.warn("Preencha todos os campos", {position: toast.POSITION.TOP_RIGHT});
                     return false
@@ -46,7 +38,8 @@ export const TripProvider = ({children}) => {
             toast.warn("Preencha todos os campos", {position: toast.POSITION.TOP_RIGHT});
             return false
         }
-        return places
+        setPlaces(placesTemp)
+        return placesTemp
     }
 
     const getCoordinates = async (places) =>{
@@ -56,10 +49,19 @@ export const TripProvider = ({children}) => {
                 let response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${place.replace(' ','+')}&key=AIzaSyBC-9Mp5zO3H8t2E9uBIbYfDS2OzHVxl_w`)
                 coordinates.push({latitude: response.data.results[0].geometry.location.lat, longitude: response.data.results[0].geometry.location.lng});
             } catch(error) {
-                alert('Erro inesperado: '+error)
+                toast.warn('Erro inesperado: '+error, {position: toast.POSITION.TOP_RIGHT});
             }
         }
-        setPlaces(coordinates)
+        setCoordinates(coordinates)
+    }
+
+    const updateMapComponent = () =>{
+        /*const test = [
+            {latitude: 25.8103146,longitude: -80.1751609},
+            {latitude: 27.9947147,longitude: -82.5943645},
+            {latitude: 28.4813018,longitude: -81.4387899}
+          ]*/
+        setMapComponent(<GoogleMap defaultZoom={7} places={coordinates} key={new Date().getTime()}/>)
     }
     
     return(
