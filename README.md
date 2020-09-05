@@ -10,9 +10,9 @@ The was developed using ReactJs.
 
 ## Preview
 The components are collapsable what makes the use less confuse and appropriate to small screens. The first screen shows a route for three brazilian cities.
-![](./examples/example1.png)
+![Example1](./examples/example1.png)
 The second screen displays the details for the user's trip.
-![](./examples/example2.png)
+![Example2](./examples/example2.png)
 
 ## Available Scripts
 
