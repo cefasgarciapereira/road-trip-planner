@@ -1,5 +1,5 @@
-import React, {useEffect, useContext} from 'react';
-import Form from '../components/Form';
+import React, {useEffect, useContext} from 'react'
+import Menu from '../components/Menu'
 import TripContext from '../contexts/trip';
 import './app.css'
 
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className='app'>
-      <Form/>
+      <Menu/>
       {mapComponent}
     </div>
   );

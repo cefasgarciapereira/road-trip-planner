@@ -7,7 +7,7 @@ const TripContext = createContext();
 
 export const TripProvider = ({children}) => {
     const [places, setPlaces] = useState([])
-    const [mapComponent, setMapComponent] = useState(null)
+    const [mapComponent, setMapComponent] = useState(<GoogleMap defaultZoom={7} places={[]} key={new Date().getTime()}/>)
 
     const updateMapComponent = () =>{
         /*const test = [
