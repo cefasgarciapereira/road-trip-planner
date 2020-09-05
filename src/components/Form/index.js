@@ -17,10 +17,10 @@ export default function Form(){
     useEffect(() => {
         if(places.length > 0){
             var list = []
-            setOrigin(places[0])
+            setOrigin(places[0].destination)
             places.map((place,i) => {
                 if(i > 0){
-                    list.push({destination: place, stay_time: ""})
+                    list.push({destination: place.destination, stay_time: place.stay_time})
                 }
             })
             console.log(list)
@@ -46,9 +46,7 @@ export default function Form(){
     };
 
     const handleTraceRoute = () =>{
-        const list = inputList;
-        var destinations = list.map(item => item.destination)
-        traceRoute(origin, destinations)
+        traceRoute(origin, inputList)
     }
 
     return(

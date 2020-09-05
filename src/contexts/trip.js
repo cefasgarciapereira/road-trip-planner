@@ -24,8 +24,9 @@ export const TripProvider = ({children}) => {
 
     const validateTrip = (origin, destinations) =>{
         var placesTemp = []
+
         if(origin){
-            placesTemp.push(origin)
+            placesTemp.push({destination: origin})
             destinations.map(dest => {
                 if(dest){
                     placesTemp.push(dest)
@@ -43,10 +44,11 @@ export const TripProvider = ({children}) => {
     }
 
     const getCoordinates = async (places) =>{
+        console.log(places);
         let coordinates = []
         for(let place of places){
             try {
-                let response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${place.replace(' ','+')}&key=AIzaSyBC-9Mp5zO3H8t2E9uBIbYfDS2OzHVxl_w`)
+                let response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${place.destination.replace(' ','+')}&key=AIzaSyBC-9Mp5zO3H8t2E9uBIbYfDS2OzHVxl_w`)
                 coordinates.push({latitude: response.data.results[0].geometry.location.lat, longitude: response.data.results[0].geometry.location.lng});
             } catch(error) {
                 toast.warn('Erro inesperado: '+error, {position: toast.POSITION.TOP_RIGHT});
