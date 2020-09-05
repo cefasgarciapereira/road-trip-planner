@@ -1,4 +1,4 @@
-<img src="https://i.pinimg.com/originals/ce/87/be/ce87bec6960894a07cff91a3a4a7615e.png" width="154">
+<img align="center" src="https://i.pinimg.com/originals/ce/87/be/ce87bec6960894a07cff91a3a4a7615e.png" width="154">
 <h1 align="center">Road Trip Planner</h1>
 <p align="center">
 A web application that allows users to plan a
@@ -6,6 +6,12 @@ road trip by adding stopping points. The app shows to the user the
 weather forecast for each location in the specified period.
 The was developed using ReactJs.
 </p>
+
+## Preview
+The components are collapsable what makes the use less confuse and appropriate to small screens. The first screen shows a route for three brazilian cities.
+<img align="center" src="./examples/example1.png" width="100%">
+The second screen displays the details for the user's trip.
+<img align="center" src="./examples/example1.png" width="100%">
 
 ## Available Scripts
 
@@ -75,6 +81,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Built With
+
+* [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine
+* [npm](https://www.npmjs.com/get-npm) - The package Manager
+* [React](https://reactjs.org/docs/getting-started.html) - React is a JavaScript library for building user interfaces. Learn what React is all about on our homepage or in the tutorial.
+* [Google Geocoding Api](https://developers.google.com/maps/documentation/geocoding/start) - The Geocoding API is a service that provides geocoding and reverse geocoding of addresses.
+* [Google Matrix Distance Api](https://developers.google.com/maps/documentation/distance-matrix/overview) - The Distance Matrix API is a service that provides travel distance and time for a matrix of origins and destinations. The API returns information based on the recommended route between start and end points, as calculated by the Google Maps API, and consists of rows containing duration and distance values for each pair.
+* [Open Weather](https://openweathermap.org/current) - Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations. Data is available in JSON, XML, or HTML format.
 
 <!-- LICENSE -->
 ## License
