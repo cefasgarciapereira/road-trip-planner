@@ -1,6 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://i.pinimg.com/originals/ce/87/be/ce87bec6960894a07cff91a3a4a7615e.png" width="154">
+<h1 align="center">Road Trip Planner</h1>
+<p align="center">
+A web application that allows users to plan a
+road trip by adding stopping points. The app shows to the user the
+weather forecast for each location in the specified period.
+The was developed using ReactJs.
+</p>
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
@@ -66,3 +75,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+<!-- LICENSE -->
+## License
+
+This project is NOT licensend, it means that rights are reserved and it is not Open Source or Free. You cannot modify or redistribute this code without explicit permission from the copyright holder.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Cefas Garcia Pereira - [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/cefas-garcia-pereira-bbaaa080/) &nbsp; - [![GitHub](https://i.stack.imgur.com/tskMh.png) GitHub](https://github.com/cefasgarciapereira) - [cefas.me](https://cefas.me) - cefasgarciapereira@gmail.com 
