@@ -1,3 +1,7 @@
+ .form_container{
+     overflow: auto;
+ }
+
  .trip_form{
     display: flex;
     flex-direction: column;

@@ -12,7 +12,7 @@ export default function MenuButtons(props){
             onClick={() => props.addInput()}/>
 
             <MdExplore 
-            size={32} 
+            size={24} 
             color="#4185F4" 
             className={'explore_icon'}
             onClick={() => props.handleTraceRoute()}/>

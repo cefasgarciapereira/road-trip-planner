@@ -23,7 +23,6 @@ export default function Form(){
                     list.push({destination: place.destination, stay_time: place.stay_time})
                 }
             })
-            console.log(list)
             setInputList(list)
         }
     }, [])
