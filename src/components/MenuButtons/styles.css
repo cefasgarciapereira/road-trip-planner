@@ -1,0 +1,24 @@
+.button_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.explore_icon{
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #444;
+}
+.explore_icon:hover{
+    cursor: pointer;
+}
+.explore_icon:active{
+    box-shadow: 0 0 1px #444;
+}
+
+.delete_icon:active{
+    color: #550000 !important;
+}

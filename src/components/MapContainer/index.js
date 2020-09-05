@@ -14,8 +14,8 @@ const MapContainer = (props) => {
         '&libraries=geometry,drawing,places'
       }
       markers={places}
-      loadingElement={loadingElement || <div style={{height: `100%`}}/>}
-      containerElement={containerElement || <div style={{height: "80vh"}}/>}
+      loadingElement={loadingElement || <div style={{height: `100vw`}}/>}
+      containerElement={containerElement || <div style={{height: "100vh"}}/>}
       mapElement={mapElement || <div style={{height: `100%`}}/>}
       defaultCenter={defaultCenter || {lat: 25.798939, lng: -80.291409}}
       defaultZoom={defaultZoom || 11}

@@ -7,6 +7,7 @@ import {
   Marker,
   DirectionsRenderer
 } from "react-google-maps";
+import { toast } from 'react-toastify';
 
 class MapDirectionsRenderer extends React.Component {
   state = {
@@ -16,41 +17,41 @@ class MapDirectionsRenderer extends React.Component {
 
   componentDidMount() {
     const { places, travelMode } = this.props;
+    if(places.length >= 2){
+        const waypoints = places.map(p =>({
+          location: {lat: p.latitude, lng:p.longitude},
+          stopover: true
+      }))
+      const origin = waypoints.shift().location;
+      const destination = waypoints.pop().location;
+      
+      
 
-    console.log('MAP',places.length)
-    
-    const waypoints = places.map(p =>({
-        location: {lat: p.latitude, lng:p.longitude},
-        stopover: true
-    }))
-    const origin = waypoints.shift().location;
-    const destination = waypoints.pop().location;
-    
-    
-
-    const directionsService = new google.maps.DirectionsService();
-    directionsService.route(
-      {
-        origin: origin,
-        destination: destination,
-        travelMode: travelMode,
-        waypoints: waypoints
-      },
-      (result, status) => {
-        if (status === google.maps.DirectionsStatus.OK) {
-          this.setState({
-            directions: result
-          });
-        } else {
-          this.setState({ error: result });
+      const directionsService = new google.maps.DirectionsService();
+      directionsService.route(
+        {
+          origin: origin,
+          destination: destination,
+          travelMode: travelMode,
+          waypoints: waypoints
+        },
+        (result, status) => {
+          if (status === google.maps.DirectionsStatus.OK) {
+            this.setState({
+              directions: result
+            });
+          } else {
+            toast.error("Um erro inesperado ocorreu. Reformule os parâmetros de busca.", {position: toast.POSITION.TOP_RIGHT});
+            this.setState({ error: 'Erro inesperado' });
+          }
         }
-      }
-    );
+      );
+    }
   }
 
   render() {
     if (this.state.error) {
-      return <h1>{this.state.error}</h1>;
+      return null;
     }
     return (this.state.directions && <DirectionsRenderer directions={this.state.directions} />)
   }
