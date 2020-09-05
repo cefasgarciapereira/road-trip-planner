@@ -1,0 +1,37 @@
+.trip_details_container{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    left: 10px;
+    padding: 20px;
+    box-shadow: 0 0 3px #666;
+    border-radius: 2px;
+    top: 25%;
+    max-width: 80vw;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.trip_details_closed{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    left: 20px;
+    padding: 5px;
+    box-shadow: 0 0 5px #444;
+    border-radius: 3px;
+    top: 50%;
+ }
+.trip_details_closed:hover{
+    cursor: pointer;
+}
+.trip_details_closed:active{
+    box-shadow: 0 0 3px #444;
+}
+
+@media (min-width: 1024px) 
+{
+    .trip_details_container{
+        max-height: 700px;
+    }
+}
