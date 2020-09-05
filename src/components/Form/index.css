@@ -1,0 +1,16 @@
+.trip_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ }
+
+.trip_form input{
+    margin: 5px;
+}
+
+.destination_container{
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "c c";
+}
