@@ -9,10 +9,8 @@ The was developed using ReactJs.
 </p>
 
 ## Preview
-The components are collapsable what makes the use less confuse and appropriate to small screens. The first screen shows a route for three brazilian cities.
-![Example1](./examples/example1.png)
-The second screen displays the details for the user's trip.
-![Example2](./examples/example2.png)
+![Example1](./examples/example.gif)
+
 
 ## Available Scripts
 
